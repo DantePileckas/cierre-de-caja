@@ -1,18 +1,16 @@
 import React, {Component} from "react";
 
 
-class FormularioIngreso extends Component{
+class Formulario extends Component{
 
-    /* canitdadIngreso = React.createRef()    
+/*     canitdadIngreso = React.createRef()    
 
     crearIngreso = (e) => {
 
         e.preventDefault();
 
-        const ingreso ={
-            cantidadIngreso : this.canitdadIngreso.current.value
-        }
-
+        const ingreso = parseInt(this.canitdadIngreso.current.value);
+        
         console.log(ingreso)
 
         this.props.agregarIngreso(ingreso)
@@ -20,20 +18,35 @@ class FormularioIngreso extends Component{
         e.currentTarget.reset()
 
     } */
+   
+  
+        ingreso = React.createRef();
+
+        acumularIngreso = (e) => {
+            e.preventDefault();
+            let i = this.ingreso.current.value;
+            this.props.acumularIngreso(i)
+            console.log(i)
+            e.currentTarget.reset();
+        }
+
 
 
     render(){
         return(
-            <form onSubmit={this.crearIngreso}>
+            <form onSubmit={this.acumularIngreso}>
             <h2>Agrega tus ingresos aquí</h2>
 
             <div className="campo">
                 <label>Ingrese el valor</label>
-                <input ref={this.canitdadIngreso} className="u-full-width" type="text" placeholder="Ej. $300" />
+                <input ref={this.ingreso} className="u-full-width" type="text" placeholder="Ej. $300" />
             </div>
         
-            <input className="button-primary u-full-width" type="submit" value="Agregar" />
-        </form>
+{/*             <input className="button-primary u-full-width" type="submit" value="Agregar" />
+ */}      
+                   <button onClick={this.acumularIngreso} type="submit" className="button-primary u-full-width">Agregar</button>
+
+  </form>
     
         )
 
@@ -42,4 +55,4 @@ class FormularioIngreso extends Component{
     }
 }
 
-export default FormularioIngreso;
+export default Formulario;
