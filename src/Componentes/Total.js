@@ -7,7 +7,7 @@ class Total extends Component{
         return(
             <div className='ingresos-realizados'>
                 <h2>Total</h2>
-              <h1> $ {acumulado} </h1> 
+              <h1 className='acumulado'> $ {acumulado} </h1> 
             </div>
         )
     }

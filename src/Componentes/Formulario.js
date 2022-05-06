@@ -3,23 +3,6 @@ import React, {Component} from "react";
 
 class Formulario extends Component{
 
-/*     canitdadIngreso = React.createRef()    
-
-    crearIngreso = (e) => {
-
-        e.preventDefault();
-
-        const ingreso = parseInt(this.canitdadIngreso.current.value);
-        
-        console.log(ingreso)
-
-        this.props.agregarIngreso(ingreso)
-
-        e.currentTarget.reset()
-
-    } */
-   
-  
         ingreso = React.createRef();
 
         acumularIngreso = (e) => {
@@ -44,8 +27,7 @@ class Formulario extends Component{
         
             <input className="button-primary u-full-width" type="submit" value="Agregar" />
       
-{/*                    <button onClick={this.acumularIngreso} type="submit" className="button-primary u-full-width">Agregar</button>
- */}
+
   </form>
     
         )

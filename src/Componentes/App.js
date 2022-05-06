@@ -3,7 +3,6 @@ import '../Css/App.css';
 import Header from './Header';
 import Formulario from './Formulario';
 import Total from './Total';
-import { calcularTotal } from '../helper';
 
 class App extends Component{
  
@@ -13,26 +12,8 @@ class App extends Component{
   }
  
 
-/*    agregarIngreso = ingreso => {
-    const ingreso = this.state.ingreso;
-    console.log(ingreso);
-    ingreso[`ingreso${Date.now()}`] = ingreso;
-    this.setState({
-      ingreso
-    })
-  }  */
-
-  sumar() {
-    this.setState((state) => {
-      // Importante: lee `state` en vez de `this.state` al actualizar.
-      return {acumulado: state.acumulado + parseInt(this.props.ingreso)}
-    });
-  }
-
   sumarIngreso = (ingreso) => {
     const numero = parseInt(ingreso);
-/*     let total = calcularTotal(numero)
- */   
     this.setState({
       acumulado: this.state.acumulado + numero
     })
