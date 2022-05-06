@@ -22,11 +22,19 @@ class App extends Component{
     })
   }  */
 
-  acumularIngreso = (ingreso) => {
-    const numero = ingreso;
-    let total = calcularTotal(numero)
+  sumar() {
+    this.setState((state) => {
+      // Importante: lee `state` en vez de `this.state` al actualizar.
+      return {acumulado: state.acumulado + parseInt(this.props.ingreso)}
+    });
+  }
+
+  sumarIngreso = (ingreso) => {
+    const numero = parseInt(ingreso);
+/*     let total = calcularTotal(numero)
+ */   
     this.setState({
-      acumulado:total
+      acumulado: this.state.acumulado + numero
     })
   }
 
@@ -44,7 +52,7 @@ class App extends Component{
           <div className="row">
               <div className="one-half column">
                   <Formulario 
-                 acumularIngreso = {this.acumularIngreso}
+                 sumarIngreso = {this.sumarIngreso}
                  />
               </div>
               <div className="one-half column">
