@@ -24,4 +24,4 @@ on:
     - name: deploy the app
   run: npm run deploy
   env:
-   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+   GH_TOKEN: ${{ secrets.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 }}

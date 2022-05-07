@@ -22,7 +22,7 @@ class Formulario extends Component{
 
             <div className="campo">
                 <label>Ingrese el valor</label>
-                <input ref={this.ingreso} className="u-full-width" type="text" placeholder="Ej. $300" />
+                <input required ref={this.ingreso} className="u-full-width" type="number" placeholder="Ej. $300" />
             </div>
         
             <input className="button-primary u-full-width" type="submit" value="Agregar" />
